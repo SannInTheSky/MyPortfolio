@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amber · yellow bootstrap portfolio</title>
+  <!-- Bootstrap 5 CSS (light version, we'll override with yellow warmth) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- custom yellow tint -->
+  <style>
+    :root {
+      --mustard: #f7c948;
+      --honey: #fad980;
+      --soft-yellow: #fff9e6;
+      --deep-gold: #e6b422;
+      --accent-brown: #8b6f3f;
+    }
+    body {
+      background-color: var(--soft-yellow);
+      color: #2e2a1f;
+    }
+    .navbar, .footer {
+      background-color: var(--mustard) !important;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .navbar-brand, .nav-link, .footer {
+      color: #3a2e0e !important;
+      font-weight: 500;
+    }
+    .nav-link:hover {
+      color: #5f4c1a !important;
+      background-color: rgba(255,255,230,0.6);
+      border-radius: 0.375rem;
+    }
+    .btn-amber {
+      background-color: var(--deep-gold);
+      color: #212121;
+      border: 1px solid #b38f40;
+      font-weight: 500;
+    }
+    .btn-amber:hover {
+      background-color: #dbaa33;
+      color: #1f1a0a;
+      border-color: #9e7b35;
+    }
+    .btn-outline-amber {
+      border-color: var(--deep-gold);
+      color: #6a4e1f;
+    }
+    .btn-outline-amber:hover {
+      background-color: var(--honey);
+      border-color: #b38f40;
+    }
+    .card {
+      border: none;
+      border-radius: 1.2rem;
+      background-color: #fef7e9;
+      box-shadow: 0 8px 18px rgba(241, 184, 36, 0.1);
+      transition: transform 0.15s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      background-color: #fff2db;
+    }
+    .card-img-top {
+      border-top-left-radius: 1.2rem;
+      border-top-right-radius: 1.2rem;
+      filter: sepia(0.2) saturate(1.3);
+    }
+    /* yellow badge / typography utilities */
+    .bg-soft-yellow {
+      background-color: #ffefc0;
+    }
+    .text-gold {
+      color: #8b611c;
+    }
+    /* form overrides */
+    .form-control, .form-select {
+      background-color: #fffef8;
+      border: 1px solid #f3d48c;
+      border-radius: 0.8rem;
+    }
+    .form-control:focus, .form-select:focus {
+      border-color: #e2b347;
+      box-shadow: 0 0 0 0.25rem rgba(255, 205, 40, 0.25);
+    }
+    .input-group-text {
+      background-color: #ffdf9e;
+      border: 1px solid #edc468;
+      color: #3d2e0e;
+    }
+    /* images – rounded & responsive */
+    .img-fluid.rounded-custom {
+      border-radius: 2rem 0.5rem 2rem 0.5rem;
+      border: 4px solid #f9dc9c;
+    }
+    /* typography utilities – extra flair */
+    .display-5, h1, h2, h3 {
+      color: #6d4f1f;
+    }
+    hr {
+      border: 1px solid #f1cf8b;
+      opacity: 0.7;
+    }
+    .list-group-item {
+      background-color: #fffae8;
+      border-color: #f5dba8;
+    }
+    /* grid demo spacing */
+    .grid-example [class^="col"] {
+      background-color: #fbeec9;
+      border: 1px dashed #e9b441;
+      padding: 0.8rem 0;
+      text-align: center;
+      border-radius: 16px;
+    }
+    footer p {
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== NAVBAR (Bootstrap feature) ========== -->
+<nav class="navbar navbar-expand-lg px-3 px-md-5" data-bs-theme="light">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="#">
+      <span class="bg-white px-3 py-2 rounded-4" style="color: #b37b2e;">🍋 YellowStack</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon" style="filter: brightness(0.8);"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Work</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Studio</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Projects</a>
+          <ul class="dropdown-menu" style="background-color: #fff2d2;">
+            <li><a class="dropdown-item" href="#">Brand identity</a></li>
+            <li><a class="dropdown-item" href="#">Digital design</a></li>
+            <li><hr class="dropdown-divider" style="border-color:#eabd70;"></li>
+            <li><a class="dropdown-item" href="#">Archive 2024</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search portfolios" aria-label="Search" style="background-color:#fffae2;">
+        <button class="btn btn-outline-amber" type="submit">🔍</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<!-- main container with grid, cards, typography etc -->
+<div class="container my-5">
+
+  <!-- headline + typography utilities (Typography utilities) -->
+  <div class="mb-5">
+    <h1 class="display-4 fw-semibold" style="color: #916e2c;">sunshine<span style="color: #c2943a;">folio</span></h1>
+    <p class="lead fst-italic text-gold">Crafted with <span class="bg-soft-yellow px-2 rounded">Bootstrap 5</span> & a yellow mood – grid, navbar, cards, buttons, forms, responsive layout, images & typography utilities.</p>
+    <hr class="w-25 mx-0">
+  </div>
+
+  <!-- ===== GRID SYSTEM demo (responsive layout) ===== -->
+  <section class="mb-5 grid-example">
+    <h2 class="h3 mb-3"><span class="border-bottom border-4 border-warning pb-1">📐 grid system · 3 cols</span></h2>
+    <div class="row g-3">
+      <div class="col-md-4"><div class="bg-warning-subtle p-3 rounded-4">01/ yellow grid</div></div>
+      <div class="col-md-4"><div class="bg-warning-subtle p-3 rounded-4">02/ responsive</div></div>
+      <div class="col-md-4"><div class="bg-warning-subtle p-3 rounded-4">03/ auto layout</div></div>
+    </div>
+  </section>
+
+  <!-- ===== CARDS + BUTTONS ===== -->
+  <section class="mb-5">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2 class="h3"><span class="border-bottom border-4 border-warning pb-1">🃏 cards + buttons</span></h2>
+      <div>
+        <button class="btn btn-amber me-2">primary amber</button>
+        <button class="btn btn-outline-amber">outline</button>
+      </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <!-- card 1 -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://placehold.co/600x400/fae49e/7b581f?text=Brand+design" class="card-img-top" alt="placeholder yellow">
+          <div class="card-body">
+            <h5 class="card-title">Sunny identity</h5>
+            <p class="card-text">Bootstrap cards with image, subtle golden border. Perfect for portfolio pieces.</p>
+            <button class="btn btn-amber btn-sm">see case</button>
+          </div>
+        </div>
+      </div>
+      <!-- card 2 with typography utility (small/ muted) -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://placehold.co/600x400/f7d775/6c4f1f?text=UI+design" class="card-img-top" alt="ui design">
+          <div class="card-body">
+            <h5 class="card-title">Honey UI<span class="badge bg-warning ms-2 text-dark">new</span></h5>
+            <p class="card-text">Cards used in grid, combined with buttons and responsive image.</p>
+            <p class="text-gold small fw-lighter">typography utilities: .text-gold + .small</p>
+            <a href="#" class="btn btn-outline-amber btn-sm">explore →</a>
+          </div>
+        </div>
+      </div>
+      <!-- card 3: include form inside? not needed, but we show off images / list? actually just style -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://placehold.co/600x400/f9d990/74541f?text=web+dev" class="card-img-top" alt="development">
+          <div class="card-body">
+            <h5 class="card-title">Responsive layout</h5>
+            <p class="card-text">Cards stack on mobile, flex on larger screens — responsive layout built-in.</p>
+            <button class="btn btn-amber btn-sm">check repo</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FORMS (fully featured) + extra grid ===== -->
+  <section class="mb-5 p-4 rounded-4" style="background-color: #fef5de;">
+    <h2 class="h3 mb-3"><span class="border-bottom border-4 border-warning pb-1">📋 forms & input groups</span></h2>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <form>
+          <div class="mb-3">
+            <label for="nameInput" class="form-label fw-semibold" style="color: #7b5b27;">Your name</label>
+            <input type="text" class="form-control" id="nameInput" placeholder="e.g., Sunny D.">
+          </div>
+          <div class="mb-3">
+            <label for="projectSelect" class="form-label fw-semibold" style="color: #7b5b27;">project type</label>
+            <select class="form-select" id="projectSelect">
+              <option selected>brand identity</option>
+              <option>web design</option>
+              <option>illustration</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-semibold" style="color: #7b5b27;">budget range</label>
+            <div class="input-group">
+              <span class="input-group-text" id="basic-addon1">€</span>
+              <input type="text" class="form-control" placeholder="minimum" aria-label="min">
+              <span class="input-group-text">to</span>
+              <input type="text" class="form-control" placeholder="maximum" aria-label="max">
+            </div>
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">I love yellow & bootstrap</label>
+          </div>
+          <button type="submit" class="btn btn-amber w-100">Send inquiry ✨</button>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <!-- extra form + typography & responsive image inside grid -->
+        <h4 class="h5">📸 images + utilities</h4>
+        <!-- Image (Bootstrap feature: responsive images) -->
+        <img src="https://placehold.co/800x400/ffe9aa/8b6622?text=responsive+image" class="img-fluid rounded-custom mb-3" alt="yellow responsive img">
+        <p class="small fw-light"><span class="fw-bold text-gold">Typography utilities:</span> .small, .fw-light, .text-gold, and bg-soft-yellow — all combined.</p>
+        <div class="bg-white p-3 rounded-4" style="border-left: 6px solid #f3c26b;">
+          <p class="mb-0"><strong>image</strong> is fluid and rounded with custom border (yellow). Every Bootstrap feature is present.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== more responsive layout: nesting grid & images ===== -->
+  <section class="mb-5">
+    <h2 class="h3 mb-3"><span class="border-bottom border-4 border-warning pb-1">🏗️ nested grid / images</span></h2>
+    <div class="row align-items-center g-4">
+      <div class="col-md-5">
+        <!-- image with .img-fluid and custom rounded (bootstrap image + utilities) -->
+        <img src="https://placehold.co/600x500/f7cd6f/513f16?text=portfolio+mock" class="img-fluid rounded-5 border border-4 border-warning" alt="yellow workspace">
+      </div>
+      <div class="col-md-7">
+        <div class="row g-3">
+          <div class="col-6"><div class="p-3 text-center bg-soft-yellow rounded-3">⚡ fast</div></div>
+          <div class="col-6"><div class="p-3 text-center bg-soft-yellow rounded-3">📱 responsive</div></div>
+          <div class="col-6"><div class="p-3 text-center bg-soft-yellow rounded-3">🧩 cards</div></div>
+          <div class="col-6"><div class="p-3 text-center bg-soft-yellow rounded-3">🎨 buttons</div></div>
+        </div>
+        <p class="mt-3 mb-0 fw-light"><span class="badge bg-warning text-dark me-2">tip</span> nested columns show responsive layout — all inside a yellow/amber theme.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- extra: list group (to show more utilities) -->
+  <div class="row mb-4">
+    <div class="col-lg-6">
+      <h4>✨ bootstrap features checklist</h4>
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center">✅ Grid system <span class="badge bg-warning text-dark">used</span></li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">✅ Navbar <span class="badge bg-warning text-dark">fixed top</span></li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">✅ Cards + buttons <span class="badge bg-warning text-dark">3 cards</span></li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">✅ Forms <span class="badge bg-warning text-dark">input+select+check</span></li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">✅ Responsive layout <span class="badge bg-warning text-dark">grid everywhere</span></li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">✅ Images (img-fluid, rounded) <span class="badge bg-warning text-dark">+custom</span></li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">✅ Typography utilities <span class="badge bg-warning text-dark">.lead,.small,text-gold..</span></li>
+      </ul>
+    </div>
+    <div class="col-lg-6 d-flex align-items-center">
+      <div class="p-3 text-center w-100">
+        <p class="mb-1 fw-semibold">💛 everything bathed in yellow</p>
+        <div class="progress" role="progressbar" aria-label="yellow progress" style="height: 20px;">
+          <div class="progress-bar bg-warning" style="width: 100%;">100% amber</div>
+        </div>
+        <small class="text-gold">progress bar – extra (not requested, but nice)</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== FOOTER (still yellow) ========== -->
+<footer class="footer mt-5 py-4 px-3 text-center">
+  <p class="mb-0">🍋 <strong>Yellow portfolio</strong> — Bootstrap features: grid, navbar, cards, buttons, forms, responsive layout, images, typography utilities.</p>
+  <p class="small mt-2 opacity-75">© 2025 built with 🌻 by bootstrap · all yellows</p>
+</footer>
+
+<!-- Bootstrap JS for navbar toggler, dropdown etc -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- optional self-initialization -->
+</body>
+</html>
